@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruleta de comidas - Familia Rodríguez Hernandez</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { font-size: 2em; color: #333; }
+        table { border-collapse: collapse; width: 60%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        button { padding: 6px 12px; margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+<h1>Ruleta de comidas - Familia Rodríguez Hernandez</h1>
+
+<button id="btnImportar">Importar Platillos</button>
+<button id="btnExportar">Exportar Platillos</button>
+
+<br><br><br>
+
+<input type="text" id="txtComida" placeholder="Escribe una comida" />
+<button id="btnAgregar">Agregar Comida</button>
+<button id="btnGirar">Girar ruleta</button>
+
+<input type="file" id="fileImportar" accept=".json" style="display: none;" />
+
+<h2>Lista de comidas</h2>
+<table id="tbComidas">
+    <thead>
+        <tr><th>Comida</th><th>Acciones</th></tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Comidas elegidas</h2>
+<table id="tbElegidas">
+    <thead>
+        <tr><th>Comida</th></tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="comidas.js"></script>
+
+</body>
+</html>
