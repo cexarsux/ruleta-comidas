@@ -1,4 +1,25 @@
  let comidas = [];
+ 
+ const frasesBienvenida = [
+    "me alegra que estés aquí.",
+    "tu sonrisa hace especial este proyecto.",
+    "esta ruleta es solo una excusa para recordarte cuánto te amo.",
+    "hoy será un gran día porque estás tú.",
+    "todo lo que hago, lo hago con amor por ti.",
+    "estás en mis pensamientos todo el tiempo.",
+    "tú haces que todo valga la pena.",
+];
+
+function obtenerFraseBienvenida() {
+    return frasesBienvenida[Math.floor(Math.random() * frasesBienvenida.length)];
+}
+ 
+ Swal.fire({
+    icon: 'info',
+    title: 'Hola de nuevo amor 💖',
+    text: obtenerFraseBienvenida(),
+    confirmButtonText: '🥰 Muack!'
+});
 
     function cargarComidas() {
         const data = localStorage.getItem("comidas");
@@ -86,6 +107,7 @@ const frasesLindas = [
     "Soy afortunado de tenerte.",
     "Contigo todo es mejor."
 ];
+
 
 function obtenerFraseLinda() {
     return frasesLindas[Math.floor(Math.random() * frasesLindas.length)];
