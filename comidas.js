@@ -18,7 +18,7 @@ function obtenerFraseBienvenida() {
     icon: 'info',
     title: 'Hola de nuevo amor 💖',
     text: obtenerFraseBienvenida(),
-    confirmButtonText: '🥰 Muack!'
+    confirmButtonText: '🥰'
 });
 
     function cargarComidas() {
@@ -102,10 +102,14 @@ const frasesLindas = [
     "Eres lo mejor de mi vida.",
     "Gracias por existir.",
     "Tu sonrisa alegra mi mundo.",
-    "Siempre estoy pensando en ti.",
     "No olvides que te amo.",
-    "Soy afortunado de tenerte.",
-    "Contigo todo es mejor."
+    "Contigo todo es mejor.",
+	"Hola miau mor 😻. ",
+	"No hay nadie como tú 😉. ",
+	"Tú eres la flor más linda 🌼.",
+	"Podazón! tu amor me hace gigante.",
+    "Cayó un unicornio en tu patio y vas a ver que darle de comer?",
+	"Eres mi dulce favorito de la gota de miel 😋."
 ];
 
 
