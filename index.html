@@ -2,51 +2,105 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruleta de comidas - Familia Rodríguez Hernandez</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { font-size: 2em; color: #333; }
-        table { border-collapse: collapse; width: 60%; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-        button { padding: 6px 12px; margin-left: 5px; }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="comidas.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-utensils"></i> Ruleta de Comidas</h1>
+            <p class="subtitle">Un proyecto inspirado en mi musa 🌼❤️</p>
+        </div>
 
-<h1>Ruleta de comidas - Familia Rodríguez Hernandez</h1>
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-row">
+                <button id="btnImportar" class="btn btn-secondary">
+                    <i class="fas fa-upload"></i> Importar Platillos
+                </button>
+                <button id="btnExportar" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Exportar Platillos
+                </button>
+            </div>
+            
+            <div class="controls-row">
+                <div class="input-container">
+                    <input type="text" id="txtComida" class="input-field" placeholder="Escribe una nueva comida..." />
+                </div>
+                <button id="btnAgregar" class="btn">
+                    <i class="fas fa-plus"></i> Agregar
+                </button>
+                <button id="btnGirar" class="btn btn-roulette">
+                    <i class="fas fa-dice"></i> ¡Girar Ruleta!
+                </button>
+            </div>
+        </div>
 
-<button id="btnImportar">Importar Platillos</button>
-<button id="btnExportar">Exportar Platillos</button>
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <span id="totalComidas" class="stat-number">0</span>
+                <div class="stat-label">Total de comidas</div>
+            </div>
+            <div class="stat-card">
+                <span id="totalElegidas" class="stat-number">0</span>
+                <div class="stat-label">Comidas elegidas</div>
+            </div>
+        </div>
 
-<br><br><br>
+        <!-- Lista de comidas -->
+        <div class="section">
+            <h2><i class="fas fa-list"></i> Lista de comidas</h2>
+            <div class="table-container">
+                <table id="tbComidas">
+                    <thead>
+                        <tr>
+                            <th>Comida</th>
+                            <th style="width: 100px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="empty-state">
+                                <i class="fas fa-plate-wheat"></i>
+                                <p>No hay comidas agregadas aún.<br>¡Empieza agregando tus platillos favoritos!</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<input type="text" id="txtComida" placeholder="Escribe una comida" />
-<button id="btnAgregar">Agregar Comida</button>
-<button id="btnGirar">Girar ruleta</button>
+        <!-- Comidas elegidas -->
+        <div class="section">
+            <h2><i class="fas fa-star"></i> Comidas elegidas para esta semana</h2>
+            <div class="table-container">
+                <table id="tbElegidas">
+                    <thead>
+                        <tr>
+                            <th>Comida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="empty-state">
+                                <i class="fas fa-magic"></i>
+                                <p>¡Usa la ruleta para elegir las comidas!</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-<input type="file" id="fileImportar" accept=".json" style="display: none;" />
-
-<h2>Lista de comidas</h2>
-<table id="tbComidas">
-    <thead>
-        <tr><th>Comida</th><th>Acciones</th></tr>
-    </thead>
-    <tbody></tbody>
-</table>
-
-<h2>Comidas elegidas</h2>
-<table id="tbElegidas">
-    <thead>
-        <tr><th>Comida</th></tr>
-    </thead>
-    <tbody></tbody>
-</table>
-
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="comidas.js"></script>
+    <input type="file" id="fileImportar" accept=".json" />
+<script src="comidas.js?v=1.1"></script>
 
 </body>
 </html>
